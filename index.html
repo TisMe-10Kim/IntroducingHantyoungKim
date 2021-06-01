@@ -7,16 +7,15 @@
             name="viewport"
             content="user-scalable=no, initial-scale=1, maximum-scale=1">
 
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
         <style>
 
             @media screen and (max-width: 767px) {
                 body {
                     width: auto;
                 }
-                #hobbies {
-                    width: auto;
-                    float: none;
-                }
+              
             }
 
             div#header {
@@ -39,46 +38,51 @@
                 height: 60px;
             }
 
-            .introduction {
-                border-bottom: 1px solid black;
-            }
 
-            .baseball {
-                border-bottom: 1px solid black;
-            }
-            .rap {
-                border-bottom: 1px solid black;
-            }
             .pic {
                 margin-top: 10px;
             }
 
-            .passage {
+            .passage { 
                 margin: 0 auto;
                 width: 70%;
+            }
+            
+            /*여기부터 1페이지 2페이지 3페이지*/
+            #introduction{
+                display: inline;
+                border-bottom: 1px solid black;
+            }
+
+            #baseball{
+                display: none;
+                border-bottom: 1px solid black;
+            }
+
+            #rap{
+                display: none;
+                border-bottom: 1px solid black;
             }
         </style>
 
         <script>
-            window.onload = function() {
-                $("to_introduction").click(function () {
-                    $("introduction").css("display", "")
-                    $("baseball").css("display", "none")
-                    $("rap").css("display", "none");
+            window.onload = function () {
+                $("#to_introduction").click(function () {
+                    $("#introduction").css("display", "inline")
+                    $("#baseball").css("display", "none")
+                    $("#rap").css("display", "none");
                 });
-                $("to_baseball").click(function () {
-                    $("introduction").css("display", "none")
-                    $("baseball").css("display", "")
-                    $("rap").css("display", "none");
+                $("#to_baseball").click(function () {
+                    $("#introduction").css("display", "none")
+                    $("#baseball").css("display", "inline")
+                    $("#rap").css("display", "none");
                 });
-                $("to_rap").click(function () {
-                    $("introduction").css("display", "none")
-                    $("baseball").css("display", "")
-                    $("rap").css("display", "none");
+                $("#to_rap").click(function () {
+                    $("#introduction").css("display", "none")
+                    $("#baseball").css("display", "none")
+                    $("#rap").css("display", "inline");
                 });
             };
-
-
         </script>
     </head>
     <body>
@@ -92,7 +96,7 @@
                             <button id="to_introduction">Introduction</button>
                         </div>
                         <div class="nav">
-                            <button  id="to_baseball">Baseball</button>
+                            <button id="to_baseball">Baseball</button>
                         </div>
                         <div class="nav">
                             <button id="to_rap">Rap</button>
@@ -102,7 +106,7 @@
             </div>
         </div>
 
-        <div class="introduction">
+        <div id="introduction">
 
             <div align="center" class="pic">
                 <img src="과제에 쓸거/profilePic.jpg" alt="profilePic" width="300">
@@ -116,7 +120,7 @@
 
         </div>
 
-        <div class="baseball">
+        <div id="baseball">
             <div class="passage">
                 <div align="center" class="pic">
                     <img src="과제에 쓸거/baseball1.jpg" alt="baseball" width="300">
@@ -135,8 +139,7 @@
 
     </div>
 
-    <div class="rap">
-
+    <div id="rap">
         <div class="passage">
             <p>
                 <div align="center" class="pic">
@@ -155,8 +158,6 @@
             </p>
         </div>
     </div>
-
-    <script>function()</script>
 
     <a href="mailto:sqplease1014@naver.com">이메일</a>
     <a href="https://www.instagram.com/10kim_tisme/">인스타그렘</a>
